@@ -4,30 +4,26 @@
 
 <div class="card">
     <div class="card-header">
-        {{customer_record.first_name}}</br>
-        {{customer_record.last_name}} </div>
+        <strong>ID: </strong> {{customer_record.id}}  <strong> {{customer_record.first_name}}
+        {{customer_record.last_name}}</strong> </div>
     <div class="card-body">
-        <h5 class="card-title"> {{customer_record.email}}
-        </h5>
+
         <p class="card-text">
-            {{customer_record.address}}
-            {{customer_record.city}}
-            {{customer_record.state}}
-            {{customer_record.zipcode}}
-            {{customer_record.created_at}}</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+            <strong>Email: </strong>{{customer_record.email}}
+        </p>
+        <p class="card-text">
+            <strong>Phone: </strong>{{customer_record.phone}}</br></br>
+            <strong>Address: </strong>{{customer_record.address}}</br>
+            <strong>City: </strong> {{customer_record.city}}</br>
+            <strong>State: </strong> {{customer_record.state}}</br>
+            <strong>Zipcode: </strong> {{customer_record.zipcode}}</br>
+            <strong>Created At: </strong> {{customer_record.created_at}}</br>
+        </p>
+        <a href="{%url 'update_record' customer_record.id%}" class="btn btn-primary">Actualizar</a>
+        <a href="{%url 'delete_record' customer_record.id%}" class="btn btn-danger">Borrar</a>
+        <a href="{%url 'home'%}" class="btn btn-secondary">Home</a>
+
     </div>
 </div>
 
-<h1>CUSTOMER RECORD: </h1>
-{{customer_record.first_name}}</br>
-{{customer_record.last_name}}
-{{customer_record.email}}
-{{customer_record.phone}}
-{{customer_record.address}}
-{{customer_record.city}}
-{{customer_record.state}}
-{{customer_record.zipcode}}
-{{customer_record.created_at}}
-{{customer_record.id }}
 {% endblock %}
